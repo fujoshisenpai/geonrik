@@ -12,7 +12,7 @@
     --navy:#0a0e27; --navy2:#0f1538;
     --panel:#141a3d; --card:#1a2149; --line:#2a3268;
     --ink:#ece7f5; --ink-dim:#9aa1cc;
-    --accent:#e8a33d; --accent-soft:#e8a33d22;
+--accent:#c9d2de; --accent-soft:#c9d2de22;
     --serif:'Space Grotesk',sans-serif; --sans:'Inter',system-ui,sans-serif;
   }
   *{box-sizing:border-box;}
@@ -93,7 +93,6 @@
 <!-- ================= INTRO ================= -->
 <div id="intro">
   <canvas id="starCanvas"></canvas>
-  <p id="introHint">click anywhere ⋆</p>
 </div>
 
 <!-- ================= MAIN PAGE ================= -->
@@ -126,25 +125,25 @@
 
   <section id="art">
     <h1>artworks</h1>
-    <p class="sub">things i've drawn, painted, or otherwise made up.</p>
+    <p class="sub">things i've drawn, painted, or otherwise made up</p>
     <div class="grid" id="art-grid"></div>
   </section>
 
   <section id="piano">
     <h1>piano</h1>
-    <p class="sub">pieces i'm learning, covers, and little recordings.</p>
+    <p class="sub">pieces i'm learning, covers, and little recordings</p>
     <div class="grid" id="piano-grid"></div>
   </section>
 
   <section id="photos">
     <h1>pictures</h1>
-    <p class="sub">photos i've taken that i actually like.</p>
+    <p class="sub">photos I've taken that I actually like</p>
     <div class="grid" id="photos-grid"></div>
   </section>
 
   <section id="workshop">
     <h1>workshop</h1>
-    <p class="sub">builds, repairs, and things i've broken on purpose.</p>
+    <p class="sub">builds, repairs, and things I've broken on purpose.</p>
     <div class="grid" id="workshop-grid"></div>
   </section>
 
@@ -162,7 +161,7 @@
         <a class="xlink" href="https://pin.it/4tAD60taa" target="_blank"> Ი𐑼 visual scraps and pretty things</a>
   </section>
 
-  <footer>geonrik</footer>
+  <footer>a little world made of daydreams, hyperfixations & too much time</footer>
 </main>
 
 <div class="overlay" id="overlay">
@@ -203,7 +202,7 @@
       grid.appendChild(card);
     });
   }
-  ['art','piano','photos','electronics'].forEach(k=>renderGrid(k,k+'-grid'));
+  ['art','piano','photos','workshop'].forEach(k=>renderGrid(k,k+'-grid'));
 
   const overlay = document.getElementById('overlay');
   function openModal(kind, item){
@@ -303,8 +302,8 @@
         const twinkle = local>=1 ? 0.75 + 0.25*Math.sin(tSec*2 + (s.delay%10)) : 1;
         const r = (s.special ? 3.2 : 2.1) * twinkle;
         ctx.beginPath();
-        ctx.fillStyle = s.special ? '#e8a33d' : '#ece7f5';
-        ctx.shadowColor = s.special ? '#e8a33d' : '#ece7f5';
+        ctx.fillStyle = s.special ? '#c9d2de' : '#ece7f5';
+ctx.shadowColor = s.special ? '#c9d2de' : '#ece7f5';
         ctx.shadowBlur = (s.special ? 10 : 5) * twinkle;
         ctx.arc(cx, cy, r, 0, 7);
         ctx.fill();
@@ -315,7 +314,6 @@
 
     if(!allLanded && landedCount === stars.length){
       allLanded = true;
-      document.getElementById('introHint').classList.add('show');
     }
     requestAnimationFrame(frame);
   }
