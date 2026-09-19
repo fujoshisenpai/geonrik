@@ -302,8 +302,8 @@
         const twinkle = local>=1 ? 0.75 + 0.25*Math.sin(tSec*2 + (s.delay%10)) : 1;
         const r = (s.special ? 3.2 : 2.1) * twinkle;
         ctx.beginPath();
-        ctx.fillStyle = s.special ? '#c9d2de' : '#ece7f5';
-ctx.shadowColor = s.special ? '#c9d2de' : '#ece7f5';
+        ctx.fillStyle = s.special ? '#cdd3e0' : '#ece7f5';
+ctx.shadowColor = s.special ? '#cdd3e0' : '#ece7f5';
         ctx.shadowBlur = (s.special ? 10 : 5) * twinkle;
         ctx.arc(cx, cy, r, 0, 7);
         ctx.fill();
